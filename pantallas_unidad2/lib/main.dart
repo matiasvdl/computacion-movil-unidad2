@@ -22,7 +22,8 @@ class GobiernoDigital extends StatelessWidget {
       ),
 
       initialRoute: AppRoutes.initialRoute,
-routes: AppRoutes.routes,
+      routes: AppRoutes.routes,
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Widget reutilizable para el AppBar del Gobierno Digital de Chile
+/// Widget para el AppBar del Gobierno Digital de Chile
 class AppBarGobierno extends StatelessWidget implements PreferredSizeWidget {
   const AppBarGobierno({super.key});
 
