@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pantallas_unidad2/screens/screen_inicio.dart';
+import 'package:pantallas_unidad2/routes/app_routes.dart';
 
 void main() {
   runApp(const GobiernoDigital());
@@ -20,8 +20,9 @@ class GobiernoDigital extends StatelessWidget {
           backgroundColor: Color(0xFF001C41),
         ),
       ),
-      
-      home: const ScreenInicio(),
+
+      initialRoute: AppRoutes.initialRoute,
+routes: AppRoutes.routes,
     );
   }
 }

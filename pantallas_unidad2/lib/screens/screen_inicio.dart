@@ -14,8 +14,10 @@ class ScreenInicio extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              color: Color(0xFF001C41),
-              padding: EdgeInsets.all(20),
+              color: const Color(0xFF001C41),
+              padding: const EdgeInsets.all(20),
+
+              // Contenido principal de la pantalla de inicio (portada)
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -38,6 +40,8 @@ class ScreenInicio extends StatelessWidget {
                       ),
                   ),
                   const SizedBox(height: 24),
+
+                  // Botón para ir a la hoja de ruta
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(vertical: 14),
