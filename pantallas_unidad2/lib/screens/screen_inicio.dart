@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pantallas_unidad2/widgets/appbar_gobierno.dart';
 
-/// Pantalla de inicio
+// Pantalla de inicio
 class ScreenInicio extends StatelessWidget {
   const ScreenInicio({super.key});
 
