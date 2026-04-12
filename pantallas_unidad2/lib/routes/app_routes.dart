@@ -9,6 +9,7 @@ class AppRoutes {
     'inicio': (BuildContext context) => const ScreenInicio(),
     'contactanos': (BuildContext context) => const ScreenContactanos(),
     'menu': (BuildContext context) => const ScreenMenu(),
+    'nosotros': (BuildContext context) => const ScreenNosotros(),
   };
 
   // Maneja rutas no definidas, redirigiendo a la pantalla de inicio.

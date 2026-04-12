@@ -73,7 +73,7 @@ class ScreenContactanos extends StatelessWidget {
                     TextSpan(
                       text: 'ticket de atención.',
                       style: TextStyle(
-                        color: Colors.blue,
+                        color: Color.fromARGB(255, 2, 74, 133),
                         decoration: TextDecoration.underline,
                       ),
                     ),
@@ -91,7 +91,7 @@ class ScreenContactanos extends StatelessWidget {
               ),
               SizedBox(height: 8),
               Text(
-                'Lunes a Jueves : 08:30 a 17:30.\nViernes          : 08:30 a 16:30.',
+                'Lunes a Jueves : 08:30 a 17:30.\nViernes :               08:30 a 16:30.',
                 style: TextStyle(
                   fontSize: 15,
                   height: 1.6,
@@ -138,7 +138,7 @@ class ScreenContactanos extends StatelessWidget {
                     TextSpan(
                       text: 'correo electrónico.',
                       style: TextStyle(
-                        color: Colors.blue,
+                        color: Color.fromARGB(255, 2, 74, 133),
                         decoration: TextDecoration.underline,
                       ),
                     ),

@@ -52,23 +52,19 @@ class ScreenMenu extends StatelessWidget {
 
               // Opciones del menú
               _MenuItem(
+                titulo: 'Inicio',
+                onTap: () {
+                  Navigator.pushNamed(context, 'inicio');
+                },
+              ),
+              _MenuItem(
                 titulo: 'Nosotros',
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, 'nosotros');
+                },
               ),
               _MenuItemConIcono(
                 titulo: 'Prensa',
-                onTap: () {},
-              ),
-              _MenuItemConIcono(
-                titulo: 'Transformación Digital',
-                onTap: () {},
-              ),
-              _MenuItemConIcono(
-                titulo: 'Servicios y plataformas',
-                onTap: () {},
-              ),
-              _MenuItemConIcono(
-                titulo: 'Biblioteca',
                 onTap: () {},
               ),
               _MenuItem(
