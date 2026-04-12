@@ -24,6 +24,8 @@ dev_dependencies:
 
 flutter:
   assets:
+    - assets/logo.png
+    - assets/gobernanza.png
     - assets/noticia1.png
 
   uses-material-design: true
