@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pantallas_unidad2/screens/screens.dart';
+import 'package:pantallas_unidad2/screens/screen_noticias.dart';
 
 class AppRoutes {
   static const String initialRoute = 'inicio';
@@ -10,6 +11,7 @@ class AppRoutes {
     'contactanos': (BuildContext context) => const ScreenContactanos(),
     'menu': (BuildContext context) => const ScreenMenu(),
     'nosotros': (BuildContext context) => const ScreenNosotros(),
+    'noticias': (context) => const ScreenNoticias(),
   };
 
   // Maneja rutas no definidas, redirigiendo a la pantalla de inicio.
