@@ -40,6 +40,12 @@ class FooterGobierno extends StatelessWidget {
           const SizedBox(height: 10),
 
           _link(
+            'Inicio',
+            onTap: () {
+              Navigator.pushNamed(context, 'inicio');
+            },
+          ),
+          _link(
             'Nosotros',
             onTap: () {
               Navigator.pushNamed(context, 'nosotros');
@@ -74,7 +80,7 @@ class FooterGobierno extends StatelessWidget {
           const Text(
             'Horario de atención:\n'
             'Lunes a Jueves : 08:30 - 17:30\n'
-            'Viernes        : 08:30 - 16:30',
+            'Viernes               : 08:30 - 16:30',
             style: TextStyle(color: Colors.white),
           ),
 
