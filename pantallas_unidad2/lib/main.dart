@@ -21,6 +21,10 @@ class GobiernoDigital extends StatelessWidget {
         ),
       ),
 
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        overscroll: false, // Esto lo ponemos para elimina el efecto de rebote al hacer scroll
+      ),
+
       initialRoute: AppRoutes.initialRoute,
       routes: AppRoutes.routes,
       onGenerateRoute: AppRoutes.onGenerateRoute,
