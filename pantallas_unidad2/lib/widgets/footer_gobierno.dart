@@ -39,9 +39,24 @@ class FooterGobierno extends StatelessWidget {
 
           const SizedBox(height: 10),
 
-          _link('Nosotros'),
-          _link('Noticias'),
-          _link('Contáctanos'),
+          _link(
+            'Nosotros',
+            onTap: () {
+              Navigator.pushNamed(context, 'nosotros');
+            },
+          ),
+          _link(
+            'Noticias',
+            onTap: () {
+              Navigator.pushNamed(context, 'noticias');
+            },
+          ),
+          _link(
+            'Contáctanos',
+            onTap: () {
+              Navigator.pushNamed(context, 'contactanos');
+            },
+          ),
 
           const SizedBox(height: 30),
 
@@ -59,7 +74,7 @@ class FooterGobierno extends StatelessWidget {
           const Text(
             'Horario de atención:\n'
             'Lunes a Jueves : 08:30 - 17:30\n'
-            'Viernes               : 08:30 - 16:30',
+            'Viernes        : 08:30 - 16:30',
             style: TextStyle(color: Colors.white),
           ),
 
@@ -69,15 +84,20 @@ class FooterGobierno extends StatelessWidget {
     );
   }
 
-  // Widget para links reutilizables
-  static Widget _link(String texto) {
+  // Widget reutilizable para links del footer.
+  static Widget _link(String texto, {required VoidCallback onTap}) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 6),
-      child: Text(
-        texto,
-        style: const TextStyle(
-          color: Colors.white,
-          decoration: TextDecoration.underline,
+      child: InkWell(
+        onTap: onTap,
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        child: Text(
+          texto,
+          style: const TextStyle(
+            color: Colors.white,
+            decoration: TextDecoration.underline,
+          ),
         ),
       ),
     );
