@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Pantalla del menú lateral
+// Pantalla del menú principal.
 class ScreenMenu extends StatefulWidget {
   const ScreenMenu({super.key});
 
@@ -19,7 +19,7 @@ class _ScreenMenuState extends State<ScreenMenu> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Encabezado del menú
+            // Encabezado del menú.
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
               child: Row(
@@ -57,9 +57,9 @@ class _ScreenMenuState extends State<ScreenMenu> {
               ),
             ),
 
-            const SizedBox(height: 36),
+            const SizedBox(height: 30),
 
-            // Iinicio del menú 
+            // Inicio
             _MenuItem(
               titulo: 'Inicio',
               onTap: () {
@@ -75,61 +75,45 @@ class _ScreenMenuState extends State<ScreenMenu> {
               },
             ),
 
-            // Prensa con despliegue Noticias
-            Container(
-              width: double.infinity,
-              color: prensaAbierto
-                  ? const Color(0xFF2C5A92)
-                  : Colors.transparent,
-              child: Theme(
-                data: Theme.of(context).copyWith(
-                  dividerColor: Colors.transparent,
-                ),
-                child: ExpansionTile(
-                  tilePadding: const EdgeInsets.symmetric(horizontal: 16),
-                  childrenPadding: EdgeInsets.zero,
-                  iconColor: Colors.white,
-                  collapsedIconColor: Colors.white,
-                  onExpansionChanged: (value) {
-                    setState(() {
-                      prensaAbierto = value;
-                    });
-                  },
-                  title: const Text(
-                    'Prensa',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                  children: [
-                    Container(
-                      width: double.infinity,
-                      color: const Color(0xFF214A7D),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, 'noticias');
-                        },
-                        child: const Padding(
-                          padding: EdgeInsets.fromLTRB(16, 18, 16, 18),
-                          child: Text(
-                            'Noticias',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 17,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            // Prensa
+            _MenuItemConIcono(
+              titulo: 'Prensa',
+              abierto: prensaAbierto,
+              onTap: () {
+                setState(() {
+                  prensaAbierto = !prensaAbierto;
+                });
+              },
             ),
 
-            const SizedBox(height: 26),
+            // Submenú
+            if (prensaAbierto) ...[
+              Container(
+                width: double.infinity,
+                color: const Color(0xFF214A7D),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, 'noticias');
+                  },
+                  splashColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  child: const Padding(
+                    padding: EdgeInsets.fromLTRB(16, 16, 16, 14),
+                    child: Text(
+                      'Noticias',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 17,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
 
-            // Contacto
+              const SizedBox(height: 25),
+            ],
+
+            // Contáctanos
             _MenuItem(
               titulo: 'Contáctanos',
               onTap: () {
@@ -143,7 +127,7 @@ class _ScreenMenuState extends State<ScreenMenu> {
   }
 }
 
-// Opción de menú simple
+// Item simple del menú.
 class _MenuItem extends StatelessWidget {
   final String titulo;
   final VoidCallback onTap;
@@ -159,6 +143,8 @@ class _MenuItem extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 0, 16, 26),
       child: InkWell(
         onTap: onTap,
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
         child: Text(
           titulo,
           style: const TextStyle(
@@ -166,6 +152,50 @@ class _MenuItem extends StatelessWidget {
             fontSize: 18,
             decoration: TextDecoration.underline,
           ),
+        ),
+      ),
+    );
+  }
+}
+
+// Item con ícono (Prensa).
+class _MenuItemConIcono extends StatelessWidget {
+  final String titulo;
+  final VoidCallback onTap;
+  final bool abierto;
+
+  const _MenuItemConIcono({
+    required this.titulo,
+    required this.onTap,
+    required this.abierto,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 0, 16, 26),
+      child: InkWell(
+        onTap: onTap,
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              titulo,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                decoration: TextDecoration.underline,
+              ),
+            ),
+            Icon(
+              abierto
+                  ? Icons.keyboard_arrow_up
+                  : Icons.keyboard_arrow_down,
+              color: Colors.white,
+            ),
+          ],
         ),
       ),
     );

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pantallas_unidad2/widgets/appbar_gobierno.dart';
+import 'package:pantallas_unidad2/widgets/footer_gobierno.dart';
 
-/// Pantalla de noticias.
+// Pantalla de noticias.
 class ScreenNoticias extends StatelessWidget {
   const ScreenNoticias({super.key});
 
@@ -98,6 +99,8 @@ class ScreenNoticias extends StatelessWidget {
                 ],
               ),
             ),
+          
+          const FooterGobierno(),
           ],
         ),
       ),
