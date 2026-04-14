@@ -50,13 +50,16 @@ class ScreenNoticias extends StatelessWidget {
                     ),
                   ),
 
-                  NoticiaCard(
-                    imagen: 'assets/noticia1.png',
-                    titulo: 'Chile sube 22 puestos y queda décimo en el ranking de Gobierno Digital de la OCDE',
-                    fecha: '16 de Febrero de 2026',
-                    resumen: 'El país experimentó un ascenso notable en el Índice de Gobierno Digital de la OCDE, pasando del puesto 32 al 10 en la última medición efectuada el año 2025. Este...',
-                    textoBoton: '→ Leer Historia',
-                    onTap: () {},
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 30, 20, 40),
+                    child: NoticiaCard(
+                      imagen: 'assets/noticia1.png',
+                      titulo: 'Chile sube 22 puestos y queda décimo en el ranking de Gobierno Digital de la OCDE',
+                      fecha: '16 de Febrero de 2026',
+                      resumen: 'El país experimentó un ascenso notable en el Índice de Gobierno Digital de la OCDE, pasando del puesto 32 al 10 en la última medición efectuada el año 2025. Este...',
+                      textoBoton: '→ Leer Historia',
+                      onTap: () {},
+                    ),
                   ),
 
                   // Footer
