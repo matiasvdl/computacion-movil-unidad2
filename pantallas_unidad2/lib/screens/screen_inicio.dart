@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pantallas_unidad2/widgets/appbar_gobierno.dart';
 import 'package:pantallas_unidad2/widgets/footer_gobierno.dart';
+import 'package:pantallas_unidad2/widgets/noticia_card.dart';
 
 // Pantalla de inicio.
 class ScreenInicio extends StatelessWidget {
@@ -264,57 +265,15 @@ class ScreenInicio extends StatelessWidget {
                         ),
                         const SizedBox(height: 30),
 
-                        SizedBox(
-                          width: double.infinity,
-                          child: Image.asset(
-                            'assets/noticia1.png',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-
-                        const SizedBox(height: 20),
-
-                        const Text(
-                          'Chile sube 22 puestos y queda décimo en el ranking de Gobierno Digital de la OCDE',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            height: 1.4,
-                          ),
-                        ),
-
-                        const SizedBox(height: 20),
-
-                        const Text(
-                          '16 de Febrero de 2026',
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.black54,
-                          ),
-                        ),
-
-                        const SizedBox(height: 20),
-
-                        const Text(
-                          'El país experimentó un ascenso notable en el Índice de Gobierno Digital de la OCDE, pasando del puesto 32 al 10 en la última medición efectuada el año 2025. Este avance lo...',
-                          style: TextStyle(
-                            fontSize: 15,
-                            height: 1.5,
-                          ),
-                        ),
-
-                        const SizedBox(height: 20),
-
-                        InkWell(
-                          onTap: () {},
-                          child: const Text(
-                            '→ Ver Más',
-                            style: TextStyle(
-                              color: Color(0xFF2B5CAA),
-                              decoration: TextDecoration.underline,
-                              fontSize: 15,
-                            ),
-                          ),
+                        NoticiaCard(
+                          imagen: 'assets/noticia1.png',
+                          titulo: 'Chile sube 22 puestos y queda décimo en el ranking de Gobierno Digital de la OCDE',
+                          fecha: '16 de Febrero de 2026',
+                          resumen: 'El país experimentó un ascenso notable en el Índice de Gobierno Digital de la OCDE, pasando del puesto 32 al 10 en la última medición efectuada el año 2025. Este avance lo...',
+                          textoBoton: '→ Ver Más',
+                          onTap: () {
+                            Navigator.pushNamed(context, 'noticias');
+                          },
                         ),
                       ],
                     ),
